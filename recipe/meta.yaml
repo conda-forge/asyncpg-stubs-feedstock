@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/asyncpg-stubs/asyncpg_stubs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/asyncpg-stubs/asyncpg_stubs-{{ version }}.tar.gz
   sha256: 8bfe20f1b1e24a19674152ec9abbcc2df72c01e78af696f44fc275d56fe335ba
 
 build:
@@ -19,7 +19,7 @@ requirements:
     - poetry-core >=1.0.0
     - python >=3.8
   run:
-    - asyncpg >=0.29,<0.30
+    - asyncpg >=0.30,<0.31
     - python >=3.8.0
     - typing_extensions >=4.7.0,<5.0.0
 
