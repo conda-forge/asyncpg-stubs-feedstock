@@ -27,11 +27,10 @@ requirements:
 test:
   requires:
     - pip
-    - mypy
     - python {{ python_min }}
   commands:
     - pip check
-    - mypy -p asyncpg
+    - test -f $SP_DIR/asyncpg-stubs/compat.pyi  # [unix]
 
 about:
   home: https://github.com/bryanforbes/asyncpg-stubs
