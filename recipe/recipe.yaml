@@ -38,11 +38,10 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
+        - mypy
     script:
-      interpreter: python
-      content:
-        import site, pathlib
-        assert pathlib.Path(site.getsitepackages()[0]) / "asyncpg-stubs/compat.pyi").exists()
+      - python -c "import site, pathlib; assert (pathlib.Path(site.getsitepackages()[0]) / 'asyncpg-stubs/__init__.pyi').exists()"
+      - mypy -p asyncpg
 
 about:
   summary: asyncpg stubs
