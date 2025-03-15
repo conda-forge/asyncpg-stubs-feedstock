@@ -1,4 +1,4 @@
-{% set version = "0.30.0" %}
+{% set version = "0.30.1" %}
 
 package:
   name: asyncpg-stubs
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/asyncpg-stubs/asyncpg_stubs-{{ version }}.tar.gz
-  sha256: 8bfe20f1b1e24a19674152ec9abbcc2df72c01e78af696f44fc275d56fe335ba
+  sha256: 236b88fca49d0d181939ed35c21f79c9c404bc3cca51f8493f6d55210ecfcaf3
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
