@@ -2,7 +2,8 @@
 schema_version: 1
 
 context:
-  version: "0.30.2"
+  version: "0.31.0"
+  python_check_max: "3.14"
 
 package:
   name: asyncpg-stubs
@@ -10,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/asyncpg-stubs/asyncpg_stubs-${{ version }}.tar.gz
-  sha256: b8a1b7cb790a7b8a0e4e64e438a97c3fac77ea02441b563b1975748f18af33ab
+  sha256: 43a1665dbe3e6596c16d9d083d568604bec2babf1e18fcb8950041674c0cac60
 
 build:
   number: 0
@@ -24,7 +25,7 @@ requirements:
     - poetry-core >=1.0.0,<2
     - python ${{ python_min }}.*
   run:
-    - asyncpg >=0.30,<0.31
+    - asyncpg >=0.31,<0.32
     - python >=${{ python_min }}
     - typing_extensions >=4.13.0,<5.0.0
 
@@ -34,7 +35,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - requirements:
       run:
         - python ${{ python_min }}.*
