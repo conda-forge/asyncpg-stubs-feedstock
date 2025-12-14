@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.31.0"
+  version: "0.31.1"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/asyncpg-stubs/asyncpg_stubs-${{ version }}.tar.gz
-  sha256: 43a1665dbe3e6596c16d9d083d568604bec2babf1e18fcb8950041674c0cac60
+  sha256: 6d7342417f867365c98b67d5ae40cb57ce6b2a9eb921fff39d9296961fca18be
 
 build:
   number: 0
