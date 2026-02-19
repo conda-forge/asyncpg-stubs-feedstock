@@ -22,7 +22,7 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core >=1.0.0,<2
+    - poetry-core >=2.0.0,<3.0.0
     - python ${{ python_min }}.*
   run:
     - asyncpg >=0.31,<0.32
@@ -30,6 +30,9 @@ requirements:
     - typing_extensions >=4.13.0,<5.0.0
 
 tests:
+  - package_contents:
+      site_packages:
+        - asyncpg-stubs/__init__.pyi
   - python:
       imports: asyncpg
       pip_check: true
@@ -41,14 +44,14 @@ tests:
         - python ${{ python_min }}.*
         - mypy
     script:
-      - python -c "import site, pathlib; assert (pathlib.Path(site.getsitepackages()[0]) / 'asyncpg-stubs/__init__.pyi').exists()"
       - mypy -p asyncpg
 
 about:
   summary: asyncpg stubs
   license: BSD-3-Clause
   license_file: LICENSE
-  homepage: https://github.com/bryanforbes/asyncpg-stubs
+  homepage: https://pypi.org/project/asyncpg-stubs
+  repository: https://github.com/bryanforbes/asyncpg-stubs
 
 extra:
   recipe-maintainers:
