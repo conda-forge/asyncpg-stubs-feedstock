@@ -3,11 +3,13 @@ About asyncpg-stubs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asyncpg-stubs-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/bryanforbes/asyncpg-stubs
+Home: https://pypi.org/project/asyncpg-stubs
 
 Package license: BSD-3-Clause
 
 Summary: asyncpg stubs
+
+Development: https://github.com/bryanforbes/asyncpg-stubs
 
 Current build status
 ====================
