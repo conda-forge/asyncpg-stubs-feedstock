@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.31.3"
+  version: "0.32.0"
   python_check_max: "3.14"
 
 package:
@@ -11,13 +11,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/asyncpg-stubs/asyncpg_stubs-${{ version }}.tar.gz
-  sha256: 37968e766d1e63a4993084ee1ed897e49a6c06a031767b2a3473b4ab81618b38
+  sha256: 0c6644e41e2756b49ba0ce95eba289450e3a3a6ee54cc4faf20d218705734630
 
 build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -25,14 +25,17 @@ requirements:
     - poetry-core >=2.0.0,<3.0.0
     - python ${{ python_min }}.*
   run:
-    - asyncpg >=0.31,<0.32
+    - asyncpg >=0.32,<0.33
     - python >=${{ python_min }}
-    - typing_extensions >=4.13.0,<5.0.0
+    - typing_extensions >=4.16.0,<5.0.0
 
 tests:
   - package_contents:
+      strict: true
       site_packages:
         - asyncpg-stubs/__init__.pyi
+        - asyncpg-stubs/**
+        - asyncpg_stubs-${{ version }}.dist-info/**
   - python:
       imports: asyncpg
       pip_check: true
